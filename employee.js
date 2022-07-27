@@ -44,5 +44,29 @@ function mainMenu() {
         ]
     })
     //add outcomes depending on what user chooses 
-    
+    .then((answer) => {
+
+        switch (answer.action) {
+            case "View all departments":
+                viewAllDep();
+            
+            case "View all roles":
+                viewAllRoles();
+
+            case "View all employees":
+                viewAllEmp();
+
+            case "Add a department":
+                addDep();
+
+            case "Add a role":
+                addRole();
+
+            case "Add an employee":
+                addEmp();
+
+            case "Update an employee role":
+                updateEmpRole();
+        }
+    });
 }
