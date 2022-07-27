@@ -27,8 +27,14 @@ THEN I am prompted to enter the employee’s first name, last name, role, and ma
 - WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database
 
+# Installation 
+1. Run npm install in the terminal to install the required node packages
+2. Log into mysql in terminal and run schema.sql to make sure table saved
+
 ## Languages Used 
 This program utilizes SQL, Javascript, Node.js and Inquirer. 
 
 ## Credits
 This project was created by Kaeden Wodke. https://github.com/Kdenn1
+
+# Video Demonstration 
