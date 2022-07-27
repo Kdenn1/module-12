@@ -10,6 +10,7 @@ CREATE TABLE Department (
 );
 
 -- Roles table --
+-- show job title, role id, department and salary 
 CREATE TABLE role (
     title VARCHAR(30) NOT NULL,
     id INT NOT NULL AUTO_INCREMENT,
@@ -19,6 +20,7 @@ CREATE TABLE role (
 );
 
 -- Employee table -- 
+-- show first, last name, job title, departments, salaries and managers
 CREATE TABLE employee (
     id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
