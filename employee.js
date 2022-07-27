@@ -24,3 +24,25 @@ connect.connect((err) => {
     //call the main menu function 
     mainMenu(); 
 }) 
+
+//MAIN MENU FUNCTION SECTION 
+//this section contains the main menu options list 
+function mainMenu() {
+    //give user a list of options to choose from 
+    inquirer.prompt({
+        name: "action",
+        type: "list",
+        message: "MENU",
+        choices: [
+            "View all departments",
+            "View all roles",
+            "View all employees",
+            "Add a department",
+            "Add a role",
+            "Add an employee",
+            "Update an employee role"
+        ]
+    })
+    //add outcomes depending on what user chooses 
+    
+}
