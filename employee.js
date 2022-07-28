@@ -44,11 +44,15 @@ function mainMenu() {
         ]
     })
     //add outcomes depending on what user chooses 
+    // still need to write functions for each declared path below 
     .then((answer) => {
 
         switch (answer.action) {
             case "View all departments":
                 viewAllDep();
+
+            case "Delete department":
+                deleteDept();
             
             case "View all roles":
                 viewAllRoles();
@@ -62,11 +66,42 @@ function mainMenu() {
             case "Add a role":
                 addRole();
 
+            case "Delete role":
+                deleteRole();
+
             case "Add an employee":
                 addEmp();
+
+            case "Delete employee":
+                deleteEmp();
 
             case "Update an employee role":
                 updateEmpRole();
         }
     });
 }
+
+//SECTION FOR OPTION FUNCTIONS 
+
+//to view employees 
+function viewAllEmp() {
+
+    //fetch all the datapoints 
+    let query = "SELECT e.id, e.first_name, e.last_name, role.title, department.name AS department, role.salary, concat(m.first_name, ' ' ,  m.last_name) AS manager FROM employee e LEFT JOIN employee m ON e.manager_id = m.id INNER JOIN role ON e.role_id = role.id INNER JOIN department ON role.department_id = department.id ORDER BY ID ASC";
+
+    //connection from the query 
+    connection.query(query, function(err, res) {
+        //if an error return an err message 
+        if(err) return err;
+        console.log("error");
+
+        //show the results from the query response 
+        console.table(res);
+
+        //to get back to main menu
+        mainMenu();
+    })
+}
+
+//to view employees by which department theyre in
+function 
