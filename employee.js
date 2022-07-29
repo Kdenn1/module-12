@@ -103,5 +103,23 @@ function viewAllEmp() {
     })
 }
 
-//to view employees by which department theyre in
-function 
+//to add employees to the roster
+function addEmp() {
+    //make 2 arrays to hold this data 
+    let roleArr = [];
+    let managerArr = [];
+
+    // make the connection 
+    promisemysql.createConnection(connectionProperties).then((conn) => {
+        // query all the roles 
+        return Promise.all([
+            conn.query('SELECT id and title from the role order by title'),
+            conn.query("SELECT employee.id, concat(employee.first_name, ' ', employee.last_name) AS employee from employee order by employee ASC")
+        ]);
+    }).then(([roles, managers]) => {
+        //place the roles into an array with a for loop
+        for (i=0; i < roles.length; i++) {
+            roleArr.push(roles[i].title);
+        }
+    })
+}
