@@ -123,3 +123,4 @@ function addEmp() {
         }
     })
 }
+//when i come back to this assignment i need to do this similar thing for the other options in the menu 
